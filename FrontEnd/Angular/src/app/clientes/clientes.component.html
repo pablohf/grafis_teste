@@ -1,0 +1,29 @@
+  
+
+<mat-toolbar color="primary">
+	<mat-toolbar-row>
+		<span>Clientes</span>
+	</mat-toolbar-row>
+</mat-toolbar>
+
+<div style="margin:32px;">
+
+	<button mat-raised-button color="warn" (click)="novo()">Novo Cliente</button>
+	<button mat-raised-button color="primary" (click)="novoProduto()" style="margin-left:16px;">Produtos</button>
+	<button mat-raised-button color="primary" (click)="novoPedido()" style="margin-left:16px;">Pedidos</button>
+	
+
+	<br />
+
+	<mat-nav-list>
+		<mat-list-item *ngFor="let cliente of clientes" (click)="mensagens(cliente)">
+			<mat-icon>account_circle</mat-icon>
+			{{ cliente.Nome }}
+			<br />
+			{{ cliente.Email}}
+		</mat-list-item>
+	</mat-nav-list>
+
+</div>	
+
+

@@ -1,0 +1,22 @@
+<mat-toolbar color="primary">
+        <mat-toolbar-row>
+            <span>Pedidos {{pedido.Numero}}</span>
+        </mat-toolbar-row>
+</mat-toolbar>
+
+<div style="margin: 32px;">
+
+        <button mat-raised-button color="primary" (click)="clientes()">Clientes</button>
+        <button mat-raised-button color="primary" (click)="novoPedido()" style="margin-left:16px;">Novo Pedido</button>
+
+        <br />
+
+        <mat-nav-list>
+            <mat-list-item *ngFor="let pedido of pedidos">
+                <mat-icon>inbox</mat-icon>
+                {{pedido.Numero}}
+            </mat-list-item>
+        </mat-nav-list>
+
+</div>
+

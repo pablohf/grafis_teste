@@ -1,0 +1,38 @@
+<mat-toolbar color="primary">
+	<mat-toolbar-row>
+		<span>Novo Produto</span>
+	</mat-toolbar-row>
+</mat-toolbar>
+
+<mat-card style="margin:32px;">
+
+	<form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+		<mat-form-field class="full-width">
+			<textarea matInput placeholder="Descrição" formControlName="descricao"></textarea>
+				<mat-error *ngIf="form.controls.descricao.hasError('required')">
+					A descrição é <strong>requerida</strong>
+				</mat-error>
+		</mat-form-field>
+		
+
+		<mat-form-field class="full-width">			
+			<input matInput placeholder="Valor" type="number" class="example-right-align" formControlName="valor">
+			<span matPrefix>$&nbsp;</span>
+			<span matSuffix>.00</span>
+				<mat-error *ngIf="form.controls.descricao.hasError('required')">
+					O valor é <strong>requerido</strong>
+				</mat-error>				
+		</mat-form-field>
+
+
+		<button mat-raised-button color="primary">Salvar</button>
+
+		<br />
+		<br />		
+
+
+	</form>
+
+</mat-card>
+

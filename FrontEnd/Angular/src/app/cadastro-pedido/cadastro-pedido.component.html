@@ -1,0 +1,29 @@
+<mat-toolbar color="primary">
+        <mat-toolbar-row>
+            <span>Novo Pedido</span>
+        </mat-toolbar-row>
+    </mat-toolbar>
+    
+    <mat-card style="margin:32px;">
+    
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    
+            <mat-form-field class="full-width">
+                <textarea matInput placeholder="Numero" formControlName="numero"></textarea>
+                    <mat-error *ngIf="form.controls.numero.hasError('required')">
+                        A descrição é <strong>requerida</strong>
+                    </mat-error>
+            </mat-form-field>  
+            
+    
+    
+            <button mat-raised-button color="primary">Salvar</button>
+    
+            <br />
+            <br />		
+    
+    
+        </form>
+    
+    </mat-card>
+    
